@@ -6,7 +6,7 @@
 import os
 for NUMT in [1, 2, 4, 8]:
     for NUMPAD in range(16):
-        cmd = "icpc -DNUMT=%d -DNUMPAD=%d -DNUMTRIES=100 project3.cpp -o runProg -lm -openmp -align -qopt-report=3 -qopt-report-phase=vec" % (NUMT, NUMPAD)
+        cmd = "g++ -DNUMT=%d -DNUMPAD=%d -DNUMTRIES=1 project3.cpp -o runProg -lm -fopenmp" % (NUMT, NUMPAD)
         os.system( cmd )
         cmd = "./runProg"
         os.system( cmd )
